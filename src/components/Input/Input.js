@@ -20,8 +20,8 @@ export function Input(props) {
 }
 
 Input.propTypes = {
-  text: PropTypes.string,
-  onChange: PropTypes.func,
+  value: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Input;
