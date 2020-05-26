@@ -1,0 +1,11 @@
+@import "src/styles/variables";
+
+.button {
+  box-shadow: $input-shadow;
+  background-color: $light-gray;
+  color: $black;
+  font-size: $font-size-normal;
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
