@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SearchForm from 'components/SearchForm';
+import ShortCityForecast from '../../components/ShortCityForecast';
 
 export class Forecast extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export class Forecast extends Component {
     return (
       <div>
         <SearchForm onSubmit={this.onSubmit} />
+        <ShortCityForecast />
       </div>
     );
   }
