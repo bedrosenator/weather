@@ -15,12 +15,14 @@ function Button(props) {
 Button.defaultProps = {
   buttonText: 'Submit',
   type: 'button',
+  onClick: function () {
+  }
 };
 
 Button.propTypes = {
   buttonText: PropTypes.string,
   type: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default Button;
