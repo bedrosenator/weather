@@ -1,13 +1,7 @@
 import { connect } from 'react-redux';
 import Forecast from './Forecast';
 import { getGeoPosition, getLocation } from 'containers/Forecast/actions';
-import {createSelector} from 'reselect';
-const location = state => state.forecast.data && state.forecast.data.location;
-const weatherDetails = state => state.forecast.data && state.forecast.data.weatherDetails;
-const error = state => state.forecast.error;
-const weatherDetailsSelector = createSelector(weatherDetails, (weather) => weather);
-const locationSelector = createSelector(location, (location) => location);
-const errorSelector = createSelector(error, (error) => error);
+import { errorSelector, weatherDetailsSelector, locationSelector } from './selectors';
 
 function mapStateToProps(state) {
   return {
