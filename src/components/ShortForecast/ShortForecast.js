@@ -32,7 +32,6 @@ function ShortForecast(props) {
         </div>
         <div className={styles.coords}>Geo coords [{weatherDetails.coord.lat} {weatherDetails.coord.lon}]</div>
       </div>
-
     </div>
   );
 }

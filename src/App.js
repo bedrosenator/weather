@@ -10,7 +10,6 @@ function App() {
       <section>
         <Forecast />
       </section>
-      <footer>Footer</footer>
     </div>
   );
 }
