@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { config } from 'config';
 
 function WeatherState(props) {
-  const { imgSrc, status, type } = props;
+  const { imgSrc, status } = props;
 
   return (
     <React.Fragment>
-      <img alt={status} src={imgSrc} width={50} height={50} />
+      <img alt={status} src={config.api.url.icons + imgSrc + '.png'} width={50} height={50} />
     </React.Fragment>
   );
 }
