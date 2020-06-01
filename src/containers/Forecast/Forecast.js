@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchForm from 'components/SearchForm';
-import ShortCityForecast from '../../components/ShortCityForecast';
+import ShortForecast from 'components/ShortForecast';
+import Error from 'components/Error';
 
 export class Forecast extends Component {
   constructor(props) {
@@ -9,15 +10,24 @@ export class Forecast extends Component {
       searchValue: '',
     };
   }
-  onSubmit(value) {
-    console.log('Forecast = ', value);
+
+  onSubmit = (value) => {
+    const { getLocation } = this.props;
+    getLocation(value);
+  }
+
+  componentDidMount() {
+    this.props.getGeoPosition()
   }
 
   render() {
+    const { weatherDetails, location, error } = this.props;
+
     return (
       <div>
-        <SearchForm onSubmit={this.onSubmit} />
-        <ShortCityForecast />
+        <SearchForm searchText={location} onSubmit={this.onSubmit} />
+        {error && <Error error={error} />}
+        {weatherDetails && <ShortForecast weatherDetails={weatherDetails} />}
       </div>
     );
   }
