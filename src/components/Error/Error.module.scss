@@ -1,0 +1,9 @@
+@import "src/styles/variables";
+
+.error {
+  display: flex;
+  color: $error;
+  font-size: $font-size-normal;
+  justify-content: center;
+  margin: 1rem;
+}
