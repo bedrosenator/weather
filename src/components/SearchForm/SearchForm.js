@@ -4,17 +4,23 @@ import Button from '../Button';
 import style from './SearchForm.module.scss';
 
 function SearchForm(props) {
-  const { onSubmit } = props;
-  const [inputValue, onChangeInput] = useState('');
+  const { onSubmit, searchText } = props;
+  const [inputValue, onChangeInput] = useState(searchText);
 
-  const onFormSubmit = () => {
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+
+    if (!inputValue) {
+      return null;
+    }
+
     onSubmit(inputValue);
   }
 
   return (
-    <form className={style.searchForm}>
-      <Input value={inputValue} onChange={onChangeInput} />
-      <Button onClick={onFormSubmit} />
+    <form onSubmit={onFormSubmit} className={style.searchForm}>
+      <Input value={searchText} onChange={onChangeInput} />
+      <Button type="submit" />
     </form>
   );
 }
