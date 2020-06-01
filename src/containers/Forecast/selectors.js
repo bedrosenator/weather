@@ -8,9 +8,9 @@ const locationSelector = createSelector(location, (location) => location);
 const errorSelector = createSelector(error, (error) => error);
 
 const weatherSelector = createSelector(
-  state => state.forecast.data.weatherDetails,
-  state => state.forecast.data.location,
-  state => state.forecast.error,
+  weatherDetailsSelector,
+  locationSelector,
+  errorSelector,
   (weatherDetails, location, error) => {
     return {
       weatherDetails,
