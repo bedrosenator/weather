@@ -1,13 +1,11 @@
 import { connect } from 'react-redux';
 import Forecast from './Forecast';
 import { getGeoPosition, getLocation } from 'containers/Forecast/actions';
-import { errorSelector, weatherDetailsSelector, locationSelector } from './selectors';
+import { weatherSelector } from './selectors';
 
 function mapStateToProps(state) {
   return {
-    error: errorSelector(state),
-    weatherDetails: weatherDetailsSelector(state),
-    location: locationSelector(state),
+    ...weatherSelector(state)
   }
 }
 
@@ -18,4 +16,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps,)(Forecast);
+export default connect(mapStateToProps, mapDispatchToProps)(Forecast);
