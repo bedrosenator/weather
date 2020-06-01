@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WeatherState from 'components/WeatherState';
-import Temperature from 'components/Temperature';
-import TemperatureRange from 'components/TemperatureRange';
-import WeatherUnit from 'components/WeatherUnit';
-import CountryFlag from 'components/CountryFlag';
+import WeatherState from 'components/Forecast/WeatherState';
+import Temperature from 'components/Forecast/Temperature';
+import TemperatureRange from 'components/Forecast/TemperatureRange';
+import WeatherUnit from 'components/Forecast/WeatherUnit';
+import CountryFlag from 'components/Forecast/CountryFlag';
 import styles from './ShortForecast.module.scss';
 
 function ShortForecast(props) {

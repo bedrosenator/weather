@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Input from 'components/Input';
-import Button from '../Button';
+import Input from 'components/Form/Input';
+import Button from 'components/Form/Button';
 import style from './SearchForm.module.scss';
 
 function SearchForm(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SearchForm from 'components/SearchForm';
-import ShortForecast from 'components/ShortForecast';
+import SearchForm from 'components/Forecast/SearchForm';
+import ShortForecast from 'components/Forecast/ShortForecast';
 import Error from 'components/Error';
 
 export class Forecast extends Component {

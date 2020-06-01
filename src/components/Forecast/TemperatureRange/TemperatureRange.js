@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Temperature from 'components/Temperature';
+import Temperature from 'components/Forecast/Temperature';
 import styles from './TemperatureRange.module.scss';
 
 function TemperatureRange(props) {
