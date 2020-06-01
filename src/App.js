@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import './App.css';
-import Forecast from './containers/Forecast/Forecast';
+import Forecast from './containers/Forecast';
 
 function App() {
   return (
