@@ -10,7 +10,7 @@ import {
 
 export function* sagaWatcher() {
   yield takeLatest([GET_GEO_POSITION], getGeoPositionSaga);
-  yield takeLatest([GET_LOCATION], sagaWorker);
+  yield takeLatest([GET_LOCATION], getLocationSaga);
 }
 
 function* makeRequest(params) {
@@ -32,7 +32,7 @@ function* makeRequest(params) {
   return yield response.json();
 }
 
-function* sagaWorker() {
+function* getLocationSaga() {
   const store = (state) => state.forecast;
   const storeData = yield select(store);
   const { data } = storeData;
