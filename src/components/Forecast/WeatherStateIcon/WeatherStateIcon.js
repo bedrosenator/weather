@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { config } from 'config';
 
-function WeatherState(props) {
+function WeatherStateIcon(props) {
   const { imgSrc, status } = props;
 
   return (
@@ -12,14 +12,14 @@ function WeatherState(props) {
   );
 }
 
-WeatherState.defaultProps = {
+WeatherStateIcon.defaultProps = {
   status: '',
   imgSrc: '',
 };
 
-WeatherState.propTypes = {
+WeatherStateIcon.propTypes = {
   status: PropTypes.string,
   imgSrc: PropTypes.string.isRequired,
 };
 
-export default WeatherState;
+export default WeatherStateIcon;

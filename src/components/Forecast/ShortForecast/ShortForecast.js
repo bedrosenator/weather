@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WeatherState from 'components/Forecast/WeatherState';
+import WeatherStateIcon from 'components/Forecast/WeatherStateIcon';
 import Temperature from 'components/Forecast/Temperature';
 import TemperatureRange from 'components/Forecast/TemperatureRange';
 import WeatherUnit from 'components/Forecast/WeatherUnit';
@@ -13,7 +13,7 @@ function ShortForecast(props) {
   return (
     <div className={styles.shortForecast}>
       {weatherDetails.weather &&
-        weatherDetails.weather.map((weather) => <WeatherState key={weather.id} imgSrc={weather.icon} status={weather.main} />
+        weatherDetails.weather.map((weather) => <WeatherStateIcon key={weather.id} imgSrc={weather.icon} status={weather.main} />
       )}
       <div className={styles.forecastDetails}>
         <div className={styles.location}>{weatherDetails.name} {weatherDetails.sys.country}&nbsp;
