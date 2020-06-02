@@ -4,13 +4,6 @@ import ShortForecast from 'components/Forecast/ShortForecast';
 import Error from 'components/Error';
 
 export class Forecast extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchValue: '',
-    };
-  }
-
   onSubmit = (value) => {
     const { getLocation } = this.props;
     getLocation(value);
@@ -24,11 +17,15 @@ export class Forecast extends Component {
     const { weatherDetails, location, error } = this.props;
 
     return (
-      <div>
+      <React.Fragment>
         <SearchForm searchText={location} onSubmit={this.onSubmit} />
         {error && <Error error={error} />}
-        {weatherDetails && <ShortForecast weatherDetails={weatherDetails} />}
-      </div>
+        {weatherDetails &&
+          <div>
+            <ShortForecast weatherDetails={weatherDetails} />
+          </div>
+        }
+      </React.Fragment>
     );
   }
 }

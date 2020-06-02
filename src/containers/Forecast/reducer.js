@@ -6,13 +6,15 @@ import {
   GET_LOCATION_ERROR,
   GET_LOCATION_SUCCESS
 } from './constants';
+import { adaptWeatherStyles } from './adapters';
 
 const initialState = {
   data: {
     location: '',
     locations: [],
     weatherDetails: null,
-    coords: '',
+    coords: null,
+    styles: {},
   },
   error: null,
   loading: false,
@@ -54,6 +56,7 @@ function forecastReducer(state = initialState, action) {
         data: {
           ...state.data,
           weatherDetails: action.data,
+          styles: { ...adaptWeatherStyles(action.data) }
         },
         error: null,
       }
@@ -65,6 +68,7 @@ function forecastReducer(state = initialState, action) {
           ...state.data,
           location: action.data.name,
           weatherDetails: action.data,
+          styles: { ...adaptWeatherStyles(action.data) }
         },
         error: null,
       }

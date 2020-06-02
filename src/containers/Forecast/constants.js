@@ -1,6 +1,12 @@
 const SUCCESS = '_SUCCESS';
 const ERROR = '_ERROR';
 
+export const TEMPERATURE_COLORS = {
+  COLD: '#00ffff',
+  WARM: '#fff700',
+  HOT: '#ff8c00',
+};
+
 export const GET_LOCATION = 'SEARCH_LOCATION';
 export const GET_LOCATION_SUCCESS = GET_LOCATION + SUCCESS;
 export const GET_LOCATION_ERROR = GET_LOCATION + ERROR;
