@@ -5,7 +5,7 @@ import { weatherDetailsSelector, forecastStylesSelector } from 'containers/Forec
 function mapStateToProps(state) {
   return {
     weatherDetails: weatherDetailsSelector(state),
-    styles: forecastStylesSelector(state),
+    forecastStyles: forecastStylesSelector(state),
   }
 }
 

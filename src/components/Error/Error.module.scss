@@ -2,8 +2,14 @@
 
 .error {
   display: flex;
-  color: $error;
+
   font-size: $font-size-normal;
   justify-content: center;
   margin: 1rem;
+
+  .message,
+  .code {
+    color: $error;
+    font-weight: bold;
+  }
 }

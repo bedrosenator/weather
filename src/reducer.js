@@ -3,4 +3,4 @@ import forecast from 'containers/Forecast/reducer';
 
 export default combineReducers({
   forecast,
-})
+});

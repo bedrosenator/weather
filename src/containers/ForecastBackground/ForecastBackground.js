@@ -1,17 +1,18 @@
 import React from 'react';
 
 function ForecastBackground(props) {
-  const { styles, children } = props;
+  const { forecastStyles, children } = props;
 
   return (
     <div style={{
-      backgroundImage: `url(${styles.bgImage})`,
+      backgroundImage: `url(${forecastStyles.bgImage})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      backgroundColor: styles.bgColor,
+      backgroundColor: forecastStyles.bgColor,
       height: '100%',
       width: '100%'
-    }}>
+    }}
+    >
       {children.map((child) => child)}
     </div>
   );

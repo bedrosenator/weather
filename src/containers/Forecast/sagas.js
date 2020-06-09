@@ -18,29 +18,21 @@ function* makeRequest(params) {
   const response = yield fetch(url + params);
 
   if (response.status !== 200) {
-    try {
-      const json = yield response.json();
-      yield put(getForecastError({ error: json }))
-    } catch (e) {
-      yield put(getForecastError({ error: response }))
-      console.error(e);
-    }
-
-    throw new Error(response);
+    const json = yield response.json();
+    yield put(getForecastError({ error: json }))
+  } else {
+    return yield response.json();
   }
-
-  return yield response.json();
 }
 
 function* getLocationSaga() {
   const store = (state) => state.forecast;
   const storeData = yield select(store);
   const { data } = storeData;
-  try {
-    const forecast = yield call(getForecastByCitySaga, data.location);
+  const forecast = yield call(getForecastByCitySaga, data.location);
+
+  if (forecast) {
     yield put(getForecastByLocationSuccess(forecast));
-  } catch (e) {
-    console.error(e);
   }
 }
 

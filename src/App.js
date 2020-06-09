@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from 'components/Header';
-import './App.css';
 import Forecast from 'containers/Forecast';
 import ForecastBackground from 'containers/ForecastBackground';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <ForecastBackground>
         <Header />
         <section>
